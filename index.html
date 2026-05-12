@@ -1,111 +1,126 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zarnovi.com & Noxevu.com For Sale | 域名出售</title>
   <style>
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
     body {
-      margin: 0;
-      font-family: Arial, "Microsoft YaHei", sans-serif;
       background: linear-gradient(135deg, #0f172a, #111827);
-      color: #111;
+      font-family: Arial, "Microsoft YaHei", sans-serif;
       min-height: 100vh;
       padding: 40px 20px;
     }
 
     .container {
-      max-width: 980px;
+      max-width: 1100px;
       margin: 0 auto;
     }
 
+    /* 头部 */
     .hero {
       text-align: center;
       color: white;
-      margin-bottom: 34px;
+      margin-bottom: 50px;
     }
 
     .tag {
       display: inline-block;
-      padding: 8px 16px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.12);
-      color: #e5e7eb;
+      background: rgba(255,255,255,0.12);
+      padding: 8px 18px;
+      border-radius: 40px;
       font-size: 14px;
-      margin-bottom: 18px;
       font-weight: 600;
+      color: #e5e7eb;
+      margin-bottom: 20px;
     }
 
     h1 {
-      font-size: 46px;
-      margin: 0 0 12px;
+      font-size: 48px;
       letter-spacing: -1px;
+      margin-bottom: 15px;
     }
 
     .hero p {
       font-size: 18px;
       color: #d1d5db;
-      line-height: 1.8;
-      max-width: 760px;
+      line-height: 1.6;
+      max-width: 750px;
       margin: 0 auto;
     }
 
+    /* 双卡片容器 - 强制并排 */
     .domains {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
       margin-top: 30px;
     }
 
+    /* 每个卡片占据一半宽度，最小320px，强制双列 */
     .card {
+      flex: 1;
+      min-width: 320px;
       background: #ffffff;
-      border-radius: 24px;
-      padding: 36px 30px;
+      border-radius: 28px;
+      padding: 36px 28px;
       text-align: center;
-      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+      box-shadow: 0 25px 45px -12px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
     }
 
     .domain {
-      font-size: 34px;
+      font-size: 36px;
       font-weight: 800;
-      margin: 0 0 10px;
-      color: #111827;
+      color: #0f172a;
+      margin-bottom: 8px;
+      word-break: break-word;
     }
 
     .subtitle {
-      font-size: 18px;
+      font-size: 16px;
       color: #4b5563;
-      margin-bottom: 22px;
+      border-bottom: 1px solid #e5e7eb;
+      display: inline-block;
+      padding-bottom: 8px;
+      margin-bottom: 20px;
     }
 
     .desc {
-      font-size: 16px;
-      line-height: 1.8;
-      color: #4b5563;
-      margin: 0 auto 24px;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #374151;
+      margin: 20px 0;
     }
 
     .price {
-      margin: 24px auto;
-      padding: 20px;
       background: #f9fafb;
-      border: 1px solid #e5e7eb;
-      border-radius: 18px;
+      border-radius: 20px;
+      padding: 18px;
+      margin: 25px 0;
+      border: 1px solid #eef2ff;
     }
 
     .price-main {
       font-size: 26px;
       font-weight: 800;
-      color: #111827;
-      margin-bottom: 8px;
+      color: #0f172a;
+      margin-bottom: 6px;
     }
 
     .price-sub {
-      font-size: 14px;
+      font-size: 13px;
       color: #6b7280;
     }
 
@@ -114,46 +129,58 @@
       gap: 12px;
       justify-content: center;
       flex-wrap: wrap;
-      margin-top: 24px;
     }
 
     .btn {
-      display: inline-block;
-      padding: 14px 22px;
-      border-radius: 12px;
       text-decoration: none;
-      font-size: 16px;
+      padding: 12px 20px;
+      border-radius: 40px;
       font-weight: 700;
+      font-size: 14px;
+      transition: 0.2s;
+      display: inline-block;
     }
 
     .btn-primary {
-      background: #111827;
-      color: #ffffff;
+      background: #0f172a;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #1e293b;
     }
 
     .btn-secondary {
-      background: #f3f4f6;
-      color: #111827;
-      border: 1px solid #e5e7eb;
+      background: #f1f5f9;
+      color: #0f172a;
+      border: 1px solid #cbd5e1;
+    }
+
+    .btn-secondary:hover {
+      background: #e2e8f0;
     }
 
     .footer {
-      margin-top: 30px;
       text-align: center;
       color: #9ca3af;
-      font-size: 14px;
-      line-height: 1.8;
+      font-size: 13px;
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
     }
 
+    /* 手机端自动变成堆叠（符合移动体验），但宽屏强制并排 */
     @media (max-width: 760px) {
       .domains {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        gap: 25px;
       }
-
+      .card {
+        min-width: auto;
+      }
       h1 {
         font-size: 34px;
       }
-
       .domain {
         font-size: 30px;
       }
@@ -161,78 +188,59 @@
   </style>
 </head>
 <body>
-  <main class="container">
-    <section class="hero">
-      <div class="tag">Premium Brandable Domains · 优质品牌域名</div>
-      <h1>Domains For Sale</h1>
-      <p>
-        Short, brandable .com domains for AI, SaaS, data platforms,
-        cybersecurity, enterprise software, and technology startups.
-        <br />
-        简短、易品牌化的 .com 域名，适合 AI、SaaS、数据平台、网络安全、
-        企业软件和科技创业项目。
-      </p>
-    </section>
+<div class="container">
+  <div class="hero">
+    <div class="tag">Premium Brandable Domains · 优质品牌域名</div>
+    <h1>Domains For Sale</h1>
+    <p>
+      Short, brandable .com domains for AI, SaaS, data platforms, cybersecurity,
+      enterprise software, and technology startups.<br>
+      简短、易品牌化的 .com 域名，适合 AI、SaaS、数据平台、网络安全、企业软件和科技创业项目。
+    </p>
+  </div>
 
-    <section class="domains">
-      <div class="card">
-        <div class="domain">Zarnovi.com</div>
-        <div class="subtitle">Brandable tech domain · 科技品牌域名</div>
-
-        <p class="desc">
-          Suitable for AI, SaaS, data, cybersecurity, enterprise software,
-          and startup brands.
-          <br />
-          适合 AI、SaaS、数据平台、网络安全、企业软件和科技创业品牌。
-        </p>
-
-        <div class="price">
-          <div class="price-main">Buy Now · 一口价：¥9,888</div>
-          <div class="price-sub">Reasonable offers welcome · 诚意报价可谈</div>
-        </div>
-
-        <div class="buttons">
-          <a class="btn btn-primary" href="https://www.xinnet.com/domain/domaintrade-info.html?domainName=zarnovi.com" target="_blank">
-            Buy on Xinnet · 新网购买
-          </a>
-          <a class="btn btn-secondary" href="mailto:qijianfeng9965@qq.com?subject=Offer for Zarnovi.com">
-            Contact Seller · 联系卖家
-          </a>
-        </div>
+  <div class="domains">
+    <!-- 卡片 1 -->
+    <div class="card">
+      <div class="domain">Zarnovi.com</div>
+      <div class="subtitle">Brandable tech domain · 科技品牌域名</div>
+      <div class="desc">
+        Suitable for AI, SaaS, data, cybersecurity, enterprise software, and startup brands.<br>
+        适合 AI、SaaS、数据平台、网络安全、企业软件和科技创业品牌。
       </div>
-
-      <div class="card">
-        <div class="domain">Noxevu.com</div>
-        <div class="subtitle">Short 6-letter .com · 六字母品牌域名</div>
-
-        <p class="desc">
-          A short and modern name for AI tools, security products,
-          data platforms, biotech, or developer software.
-          <br />
-          适合 AI 工具、安全产品、数据平台、生物科技或开发者软件品牌。
-        </p>
-
-        <div class="price">
-          <div class="price-main">Buy Now · 一口价：¥5,888</div>
-          <div class="price-sub">Reasonable offers welcome · 诚意报价可谈</div>
-        </div>
-
-        <div class="buttons">
-          <a class="btn btn-primary" href="https://www.xinnet.com/domain/domaintrade-info.html?domainName=noxevu.com" target="_blank">
-            Buy on Xinnet · 新网购买
-          </a>
-          <a class="btn btn-secondary" href="mailto:qijianfeng9965@qq.com?subject=Offer for Noxevu.com">
-            Contact Seller · 联系卖家
-          </a>
-        </div>
+      <div class="price">
+        <div class="price-main">Buy Now · 一口价：¥9,888</div>
+        <div class="price-sub">Reasonable offers welcome · 诚意报价可谈</div>
       </div>
-    </section>
-
-    <div class="footer">
-      Secure domain transfer can be arranged after payment confirmation.
-      <br />
-      确认付款后可通过新网交易流程完成域名购买、过户或转移。
+      <div class="buttons">
+        <a class="btn btn-primary" href="https://www.xinnet.com/domain/domaintrade-info.html?domainName=zarnovi.com" target="_blank">Buy on Xinnet · 新网购买</a>
+        <a class="btn btn-secondary" href="mailto:qijianfeng9965@qq.com?subject=Offer for Zarnovi.com">Contact Seller · 联系卖家</a>
+      </div>
     </div>
-  </main>
+
+    <!-- 卡片 2 -->
+    <div class="card">
+      <div class="domain">Noxevu.com</div>
+      <div class="subtitle">Short 6-letter .com · 六字母品牌域名</div>
+      <div class="desc">
+        A short and modern name for AI tools, security products, data platforms, biotech, or developer software.<br>
+        适合 AI 工具、安全产品、数据平台、生物科技或开发者软件品牌。
+      </div>
+      <div class="price">
+        <div class="price-main">Buy Now · 一口价：¥5,888</div>
+        <div class="price-sub">Reasonable offers welcome · 诚意报价可谈</div>
+      </div>
+      <div class="buttons">
+        <a class="btn btn-primary" href="https://www.xinnet.com/domain/domaintrade-info.html?domainName=noxevu.com" target="_blank">Buy on Xinnet · 新网购买</a>
+        <a class="btn btn-secondary" href="mailto:qijianfeng9965@qq.com?subject=Offer for Noxevu.com">Contact Seller · 联系卖家</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    Secure domain transfer can be arranged after payment confirmation.<br>
+    确认付款后可通过新网交易流程完成域名购买、过户或转移。
+  </div>
+</div>
 </body>
 </html>
